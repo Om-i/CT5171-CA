@@ -1,0 +1,83 @@
+:root {
+    --bs-border-radius: 0.5rem;
+    --bs-body-bg: aliceblue;
+}
+
+body {
+    padding-top: 5%;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    /*background-color: #f8f9fa;*/
+    background-image: url('background.png');
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    padding: 20px;
+}
+
+h1 {
+    color: #0264D3;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #0264D3;
+    color: white;
+}
+
+.card-body {
+}
+
+.icon {
+    color: #6c757d;
+    cursor: pointer;
+    border-radius: 25%;
+    margin: 0;
+    padding: 10px;
+    /*transition: 0.3s;*/
+}
+
+.icon:hover {
+    color: #343a40;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn-primary {
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #6c757d;
+    --bs-btn-hover-bg: #343a40;
+    --bs-btn-hover-border-color: #343a40;
+}
+
+.list-group {
+    --bs-list-group-action-hover-bg: #0264D3;
+    --bs-list-group-action-hover-color: white;
+}
+
+.comment, .form-control {
+    font-size: 1.2rem;
+}
+
+h5 {
+    color: #0264D3;
+    display: inline;
+}
+
+.timestamp {
+    font-size: 0.5em;
+    line-height: 0.5em;
+}
+
+footer {
+    background-color: aliceblue;
+    font-size: 0.8em;
+    z-index: -15;
+}
