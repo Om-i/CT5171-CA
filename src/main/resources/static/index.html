@@ -1,92 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding for the document -->
     <meta charset="utf-8">
+    <!-- Responsive design for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-          crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Link to Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Search Petitions - Petition Pulse</title>
+    <!-- Link to custom stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <title>Welcome to Firebase Hosting</title>
-    <script src="script.js" defer></script> <!--defer delays the execution of the script-->
+    <script src="js/index.js" defer></script> <!--defer delays the execution of the script-->
 </head>
 <body class="d-flex flex-column min-vh-100"> <!--fill space vertically-->
-
 <div class="container flex-grow-1"> <!-- push the footer down -->
     <div class="row">
         <div class="col-lg-8">
-            <!--Title-->
+            <!-- Main title for the page -->
             <h1>Petition Pulse: Your Voice, Your Power</h1>
 
-            <!--Content-->
-            <p>
+            <!-- Welcome message section -->
             <h5>Welcome to Petition Pulse!</h5>
-            At Petition Pulse, we believe that every voice matters. Whether you're passionate about environmental issues, social justice, or community improvement, our platform empowers you to create, view, and sign petitions that drive change.
-            <p>
-            <h5>Create Your Petition:</h5>
-            Turn your passion into action! With just a few clicks, you can craft a compelling petition that resonates with your cause. Share your story, set your goals, and watch your movement grow.
-            <p>
-            <h5>Join the Movement:</h5>
-            Explore petitions from fellow changemakers. Browse through a variety of pressing issues and lend your signature to causes that inspire you. Together, we can amplify our voices and create a wave of change.
-            <p>
-            <h5>Make Your Mark:</h5>
-            Signing a petition is just the beginning. Stay updated on the progress of your favorite causes, share with friends, and rally support to make a real impact. Every signature counts, yours could be the one that tips the scale!
-            <p>
-            <h5>Let's Get Started!</h5>
-            Join us on this journey to make the world a better place, one petition at a time. Your voice is powerful, let it be heard!
+            At Petition Pulse, we believe that every voice matters. Whether you're passionate about environmental
+            issues, social justice, or community improvement, our platform empowers you to create, view, and sign
+            petitions that drive change.
+            <p><h5>Create Your Petition:</h5>
+            Turn your passion into action! With just a few clicks, you can craft a compelling petition that
+            resonates with your cause. Share your story, set your goals, and watch your movement grow.
+            <p><h5>Join the Movement:</h5>
+            Explore petitions from fellow changemakers. Browse through a variety of pressing issues and lend your
+            signature to causes that inspire you. Together, we can amplify our voices and create a wave of change.
+            <p><h5>Make Your Mark:</h5>
+            Signing a petition is just the beginning. Stay updated on the progress of your favorite causes, share
+            with friends, and rally support to make a real impact. Every signature counts; yours could be the one
+            that tips the scale!
+            <p><h5>Let's Get Started!</h5>
+            Join us on this journey to make the world a better place, one petition at a time. Your voice is
+            powerful; let it be heard!
             <p>
 
-            <!-- Create petitions -->
-            <div class="card">
-                <h5 class="card-header">Create your petition:</h5>
-                <div class="card-body">
-                    <!--make post request-->
-                    <form onsubmit="postPetition(event)">
-                        <!-- <div class="form-group">-->
-                        <!--<input id="handle" type="text" placeholder="@handle" class="form-control">-->
-                        <!--</div>-->
-                        <div class="form-group">
-                            <!-- Limit the user to 280 characters (just like Twitter) -->
-                            <textarea id="petition" placeholder="@petition" rows="3"
-                                      class="form-control" maxlength="280"
-                                      oninput="countChar()"></textarea>
-                            <!-- Character limit counter -->
-                            <p id="counter" style="margin: 0;"></p>
-                        </div>
-                        <div class="form-group d-flex justify-content-between align-items-center">
-                            <i></i>
-                            <button type="submit" class="btn btn-primary">Post</button>
-                        </div>
-                    </form>
-                </div>
+                <!-- Search section for petitions -->
+            <h1>Search for a Petition</h1>
+            <input type="text" id="searchQuery" class="form-control my-3" placeholder="Search...">
+            <div class="form-group d-flex justify-content-between align-items-center">
+                <i></i> <!-- Placeholder for an icon if needed -->
+                <button id="searchButton" class="btn btn-primary">Search</button> <!-- Search button -->
             </div>
+            <ul id="searchResults" class="list-group mt-3"></ul> <!-- List to display search results -->
         </div>
 
-        <!-- Sidebar -->
+        <!-- Sidebar menu -->
         <div class="col d-none d-lg-block">
             <div class="card">
                 <h5 class="card-header">Menu</h5>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-action">Search a petition</li>
-                        <li class="list-group-item list-group-item-action">View all petitions</li>
+                        <!-- Menu items with onclick navigation to other pages -->
+                        <li class="list-group-item list-group-item-action" onclick="location.href='create.html'">Create
+                            a Petition
+                        </li>
+                        <li class="list-group-item list-group-item-action" onclick="location.href='view.html'">View all
+                            petitions
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-<footer class="text-center">
-    <a href="https://www.freepik.com/free-vector/universal-declaration-human-rights-concept-illustration_19835759.htm">Image by storyset</a> on Freepik
+<!-- Footer with image attribution -->
+<footer class="text-center mt-3">
+    <a href="https://www.freepik.com/free-vector/universal-declaration-human-rights-concept-illustration_19835759.htm">Image
+        by storyset</a> on Freepik
 </footer>
 </body>
 </html>
-
-<!--<form onsubmit="{(event) => postPetition(event)}">-->
