@@ -6,8 +6,9 @@ const list = document.getElementById('petitionList');
 // Iterate over each petition and create a list item
 petitions.forEach((petition, index) => {
     const li = document.createElement('li'); // Create a new list item
-    li.classList.add('list-group-item'); // Add Bootstrap styling class
-    // Set the inner HTML with a link to the detail page of the petition
-    li.innerHTML = `<a href="viewPetition.html?id=${index}">${petition.title}</a>`;
+    li.classList.add('list-group-item', 'list-group-item-action'); // Add Bootstrap styling class
+    // Link to the view petition page with the petition index as a query parameter
+    li.setAttribute('onclick',`location.href="viewPetition.html?id=${index}"`);
+    li.textContent = `${petition.title}`;
     list.appendChild(li); // Append the list item to the petition list
 });

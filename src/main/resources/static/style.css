@@ -79,5 +79,5 @@ h5 {
 footer {
     background-color: aliceblue;
     font-size: 0.8em;
-    z-index: -15;
+    /* z-index: -15; */
 }
