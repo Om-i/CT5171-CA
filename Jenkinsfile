@@ -24,5 +24,10 @@ pipeline {
 //                sh 'mvn test'
             }
         }
+        stage('Package') {
+                    steps {
+                         sh 'mvn -Dmaven.test.skip package'
+                    }
+                }
     }
 }
