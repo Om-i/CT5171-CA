@@ -10,5 +10,11 @@ pipeline {
                 git 'https://github.com/Om-i/CT5171-CA.git'
             }
         }
+        stage('Build') {
+            steps {
+                sh 'mvn clean'
+                sh 'mvn compile'
+            }
+        }
     }
 }
