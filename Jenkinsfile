@@ -25,9 +25,15 @@ pipeline {
             }
         }
         stage('Package') {
-                    steps {
-                         sh 'mvn -Dmaven.test.skip package'
-                    }
-                }
+                steps {
+                sh 'mvn -Dmaven.test.skip package'
+            }
+        }
+        stage('Archive') {
+            steps {
+                archiveArtifacts allowEmptyArchive:true,
+                    artifacts: '**/omarspetitions*.war'
+            }
+        }
     }
 }
