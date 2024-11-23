@@ -16,5 +16,13 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'mvn test-compile'
+                sh 'mvn surefire:test'
+                /* Running the whole test phase would clean the project again */
+//                sh 'mvn test'
+            }
+        }
     }
 }
