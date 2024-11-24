@@ -1,2 +1,9 @@
-/mvnw text eol=lf
-*.cmd text eol=crlf
+*               text=auto
+*.gitattributes text
+.gitignore      text
+*.md            text diff=markdown
+
+*.ico           binary
+*.png           binary
+*.war           binary
+*.tar           binary
