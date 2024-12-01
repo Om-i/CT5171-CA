@@ -4,11 +4,11 @@ const petitions = JSON.parse(localStorage.getItem('petitions')) || [];
 const list = document.getElementById('petitionList');
 
 // Iterate over each petition and create a list item
-petitions.forEach((petition, index) => {
+petitions.forEach(petition => {
     const li = document.createElement('li'); // Create a new list item
     li.classList.add('list-group-item', 'list-group-item-action'); // Add Bootstrap styling class
     // Link to the view petition page with the petition index as a query parameter
-    li.setAttribute('onclick',`location.href="viewPetition.html?id=${index}"`);
+    li.setAttribute('onclick',`location.href="viewPetition.html?id=${petition.id}"`);
     li.textContent = `${petition.title}`;
     list.appendChild(li); // Append the list item to the petition list
 });

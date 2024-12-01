@@ -8,8 +8,10 @@ document.getElementById('petitionForm').addEventListener('submit', function(e) {
 
     // Retrieve existing petitions from local storage or initialize an empty array
     const petitions = JSON.parse(localStorage.getItem('petitions')) || [];
+    // Autoincrement ID
+    const newId = petitions.length > 0 ? Math.max(...petitions.map(p => p.id)) + 1 : 0;
     // Add the new petition to the petitions array
-    petitions.push({ title, description, signatures: [] });
+    petitions.push({ id:newId, title, description, signatures: [] });
     // Save the updated petitions array back to local storage
     localStorage.setItem('petitions', JSON.stringify(petitions));
 

@@ -16,8 +16,8 @@ document.getElementById('searchQuery').addEventListener('keypress', function(eve
 // Initial Random Data for demonstration or testing purposes
 if (!localStorage.getItem('petitions')) {
     const initialPetitions = [
-        { title: "Save the Whales", description: "A petition to protect whale habitats.", signatures: [] },
-        { title: "Clean the Oceans", description: "A petition to reduce ocean pollution.", signatures: [] }
+        { id: 0, title: "Save the Whales", description: "A petition to protect whale habitats.", signatures: [] },
+        { id: 1, title: "Clean the Oceans", description: "A petition to reduce ocean pollution.", signatures: [] }
     ];
     // Store initial petitions in local storage
     localStorage.setItem('petitions', JSON.stringify(initialPetitions));

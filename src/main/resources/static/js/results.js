@@ -9,11 +9,11 @@ const resultsList = document.getElementById('resultsList');
 const results = petitions.filter(petition => petition.title.toLowerCase().includes(query));
 
 // Populate the results list with filtered petitions
-results.forEach((petition, index) => {
+results.forEach(petition => {
     const li = document.createElement('li'); // Create a new list item for each result
     li.classList.add('list-group-item', 'list-group-item-action'); // Add Bootstrap styling class
     // Link to the view petition page with the petition index as a query parameter
-    li.setAttribute('onclick',`location.href="viewPetition.html?id=${index}"`);
+    li.setAttribute('onclick',`location.href="viewPetition.html?id=${petition.id}"`);
     li.textContent = `${petition.title}`;
     resultsList.appendChild(li); // Append the list item to the results list
 });
